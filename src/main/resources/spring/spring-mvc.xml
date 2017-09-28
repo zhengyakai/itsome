@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 配置Controller扫描 -->
+    <context:component-scan base-package="com.yakai.blog.controller" />
+
+    <!-- 配置注解驱动 -->
+    <mvc:annotation-driven />
+
+    <!-- Example: prefix="/WEB-INF/jsp/", suffix=".jsp", viewname="test" ->
+        "/WEB-INF/jsp/test.jsp" -->
+    <!-- 配置视图解析器 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!-- 配置前缀 -->
+        <property name="prefix" value="/WEB-INF/views/" />
+        <!-- 配置后缀 -->
+        <property name="suffix" value=".jsp" />
+    </bean>
+
+    <!-- 配置图片上传解析器 -->
+    <!-- 必须设置id，而且id的值是接口的名字首写字母小写 -->
+    <!--<bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        &lt;!&ndash; 配置上传文件大小限制 &ndash;&gt;
+        <property name="maxUploadSize" value="50000000" />
+    </bean>-->
+
+    <mvc:resources location="/static/" mapping="/static/**"/>
+</beans>

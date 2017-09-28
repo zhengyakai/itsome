@@ -1,0 +1,105 @@
+.navbar-default {
+  background-color: #4183C4;
+  border-color: #4183C4;
+}
+.navbar-default .navbar-brand {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #bbfffe;
+}
+.navbar-default .navbar-text {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #bbfffe;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #bbfffe;
+  background-color: #3c61e7;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #bbfffe;
+  background-color: #3c61e7;
+}
+.navbar-default .navbar-toggle {
+  border-color: #3c61e7;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #3c61e7;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ecf0f1;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ecf0f1;
+}
+.navbar-default .navbar-link {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-link:hover {
+  color: #bbfffe;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ecf0f1;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #bbfffe;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #bbfffe;
+    background-color: #3c61e7;
+  }
+}
+.noneLine{
+  text-decoration: none;
+}
+
+.mylabel{
+  width: 20%;
+  float: left;
+  margin: 10px 0px 10px 10px;
+  background-color: white;
+  height: 100px;
+  border: 10px solid #CCCCCC;
+  text-align: left;
+  padding: 20px;
+  display: inline;
+}
+.mytype{
+   margin: 10px 0px 10px 10px;
+   background-color: white;
+   height: 180px;
+   border: 10px solid #CCCCCC;
+   text-align: left;
+   padding: 40px 20px 50px 20px;
+   display: inline;
+ }
+.myspan{
+  color: #338FD0;font-size:500px;font-size: 25px
+}
+.myA{
+  font-weight: 500;font-size: 20px;
+}
+.myhr1{
+  margin: auto auto 3px auto
+}
+.mysup{
+  color: #F52FB5;font-weight: 600;font-size: 13px
+}
