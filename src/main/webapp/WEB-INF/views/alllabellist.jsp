@@ -21,7 +21,7 @@
         </div>
         <div class="col-lg-9">
             <c:forEach var="labelVo" items="${voPageBean.pageList}">
-                <div class="mylabel animated fadeInDown">
+                <div class="mylabel col-lg-3 col-xs-12 animated fadeInDown">
                     <a href="${path}/label/articlesBylabel/${labelVo.label}">
                         <span class="myspan">${labelVo.label}</span>
                     </a>

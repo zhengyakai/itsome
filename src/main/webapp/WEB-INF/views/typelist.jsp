@@ -36,7 +36,7 @@
         <div class="col-lg-9">
             <c:forEach var="articlesVo" items="${voPageBean.pageList}">
                 <div class="mytype col-lg-3 col-xs-12 animated fadeInDown">
-                    <a href="/detail/${articlesVo.articleId}">
+                    <a href="${path}/article/detail/${articlesVo.articleId}">
                     <span class="myspan">
                             ${articlesVo.title}
                     </span>
