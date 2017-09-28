@@ -22,7 +22,7 @@
 <c:forEach var="articleIndexVo" items="${pageBean.pageList}">
     <div class="aiticleCls animated fadeInLeft">
         <article style="margin-bottom: 25px">
-            <h2><a  href="${path }/detail/${articleIndexVo.articleId}">${articleIndexVo.title}</a></h2>
+            <h2><a  href="${path }/article/detail/${articleIndexVo.articleId}">${articleIndexVo.title}</a></h2>
             <span class="summary">${articleIndexVo.label}</span><br><br>
             <span class="glyphicon glyphicon-calendar" style="color: #808080;font-size: 20px">
                        <fmt:formatDate value="${articleIndexVo.createTime}" pattern="yyyy/MM/dd"/>

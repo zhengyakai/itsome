@@ -153,16 +153,17 @@
 
     function searchAjax(){
         $("#search-result").children().remove();
-        var x = $(this).val();
+        //获得关键字
+        var keyword = $(this).val();
         //如果输入的内容是空(例如用户连续敲空格),不发送ajax
-        if (x !== null && x !== undefined && x.trim()!== ''){
+        if (keyword !== null && keyword !== undefined && keyword.trim()!== ''){
             $.ajax({
-                url : '${path}/search/'+x,
+                url : '${path}/article/search/'+keyword,
                 type : "post",
                 dataType : "json",
                 success : function(data) {
                     for(var i=0;i<data.length;i++){
-                        child = '<h2 style="margin: 5px 0px"><a href="${path}/detail/'+data[i].articleId+'">'+data[i].title+'</a></h2>\n' +'<span class="summary">'+data[i].label+'</span>\n' +'<hr style="margin: 5px auto">';
+                        child = '<h2 style="margin: 5px 0px"><a href="${path}/article/detail/'+data[i].articleId+'">'+data[i].title+'</a></h2>\n' +'<span class="summary">'+data[i].label+'</span>\n' +'<hr style="margin: 5px auto">';
                         $("#search-result").append(child);
                     }
                 }

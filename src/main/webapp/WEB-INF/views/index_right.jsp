@@ -79,10 +79,10 @@
     <div style="text-align: left;margin: 30px 30px auto 30px">
         <p style="font-weight: 600;font-size: 25px;color: #2e6da4;margin-bottom: auto">专栏</p>
         <hr style="border: solid;height: 1px;color:#CCCCCC;background-color: #CCCCCC;margin: auto auto 7px auto"/>
-        <a class="myA">服务端开发指南与最佳实践</a><hr class="myhr1"/>
-        <a class="myA">Spring Boot 揭秘与实战</a><hr class="myhr1"/>
-        <a class="myA">设计模式指南</a><hr class="myhr1"/>
-        <a class="myA">RabbitMQ 实战</a><hr class="myhr1"/>
+        <a class="myA">服务端开发</a><hr class="myhr1"/>
+        <a class="myA">Spring Boot</a><hr class="myhr1"/>
+        <a class="myA">设计模式</a><hr class="myhr1"/>
+        <a class="myA">RocketMQ</a><hr class="myhr1"/>
     </div>
     <div id="labelId" style="text-align: left;margin: 30px 30px auto 30px">
         <p style="font-weight: 600;font-size: 25px;color: #2e6da4;margin-bottom: auto">标签</p>
@@ -100,7 +100,7 @@
         <p style="font-weight: 600;font-size: 25px;color: #2e6da4;margin-bottom: auto">推荐网站</p>
         <hr style="border: solid;height: 1px;color:#CCCCCC;background-color: #CCCCCC;margin: auto auto 7px auto"/>
         <a class="myA" href="http://spring4all.com/" target="_blank">Spring For All 社区</a><hr class="myhr1"/>
-        <a class="myA" href="http://docs.720ui.com/index.htm" target="_blank">开发在线文档</a><hr class="myhr1"/>
+        <a class="myA" href="https://segmentfault.com/" target="_blank">Segmentfault</a><hr class="myhr1"/>
         <a class="myA" href="http://www.csdn.net/" target="_blank">CSDN</a><hr class="myhr1"/>
     </div>
 </div>

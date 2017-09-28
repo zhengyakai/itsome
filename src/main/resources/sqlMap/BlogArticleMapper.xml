@@ -218,4 +218,21 @@
     and t.type_id=#{typeId}
     ORDER BY create_time desc
   </select>
+
+  <select id="getDateList" resultType="com.yakai.blog.model.BlogArchiveVo">
+    select DATE_FORMAT(a.create_time,'%Y-%m') dateStr,count(1) dateCount
+    from blog_article a
+    GROUP BY dateStr
+    ORDER BY dateStr desc
+  </select>
+
+  <select id="getArticlesByDate" parameterType="String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from blog_article
+    where DATE_FORMAT(create_time,'%Y-%m')=#{dateStr}
+    ORDER BY create_time desc
+  </select>
+
+
 </mapper>

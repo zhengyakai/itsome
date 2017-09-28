@@ -30,4 +30,8 @@ public interface BlogArticleMapper {
     List<BlogArticleVo> getArticlesByLabelName(String labelName);
 
     List<BlogArticleVo> getArticlesByTypeId(Integer typeId);
+
+    List<BlogArchiveVo> getDateList();
+
+    List<BlogArticle> getArticlesByDate(String dateStr);
 }
