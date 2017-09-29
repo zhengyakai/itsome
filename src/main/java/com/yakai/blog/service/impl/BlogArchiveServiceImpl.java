@@ -46,12 +46,12 @@ public class BlogArchiveServiceImpl implements BlogArchiveService{
             //判断是否为空 不为空直接返回
             if(StringUtils.isNotBlank(pageBeanJson)){
                 PageBean<BlogArticle> pageBean = JSONObject.parseObject(pageBeanJson, PageBean.class);
-                logger.info("从redis中取得的数据:"+pageBeanJson);
+                logger.info("从redis中取得的archivesPageBean:"+pageBeanJson);
                 //PageBean<BlogArticle> pageBean  = (PageBean<BlogArticle>) JSON.parse(pageBeanJson);
                 return pageBean;
             }
         } catch (Exception e) {
-            logger.error("从redis中获得archivesPageBean异常!",e);
+            logger.info("从redis中获得archivesPageBean异常!",e);
         }
         //为空的话 去数据库命中,然后放到redis中
         int pageSize = Integer.parseInt(currentCount);
