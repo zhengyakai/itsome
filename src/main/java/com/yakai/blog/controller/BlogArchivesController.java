@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -37,7 +38,7 @@ public class BlogArchivesController {
      * @param currentCount
      * @return
      */
-    @RequestMapping("{dateStr}")
+    @RequestMapping(value = "{dateStr}",method = RequestMethod.GET)
     public String archives(Model model, @RequestParam(defaultValue = "1") String currentPage,
                            @RequestParam(value = "rows",defaultValue = "9") String currentCount,
                            @PathVariable("dateStr") String dateStr){

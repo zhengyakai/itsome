@@ -57,7 +57,7 @@ public class BlogArticleController {
      * @param articleId
      * @return
      */
-    @RequestMapping("/detail/{articleId}")
+    @RequestMapping(value="/detail/{articleId}",method = RequestMethod.GET)
     public String detail(Model model, @PathVariable("articleId") Integer articleId){
         try {
             logger.info("详情页请求的articleId:"+articleId);

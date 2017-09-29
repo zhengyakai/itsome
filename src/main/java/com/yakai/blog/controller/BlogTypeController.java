@@ -11,7 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
@@ -23,7 +23,7 @@ public class BlogTypeController {
     @Autowired
     private BlogTypeService blogTypeService;
 
-    @RequestMapping("getAllTypes")
+    @RequestMapping(value = "getAllTypes",method = RequestMethod.GET)
     @ResponseBody
     public List<BlogType> getAllTypes(){
         List<BlogType> types=null;
@@ -43,7 +43,7 @@ public class BlogTypeController {
      * @param typeId
      * @return
      */
-    @RequestMapping("typelist/{typeId}/{currentPage}/{currentCount}")
+    @RequestMapping(value = "typelist/{typeId}/{currentPage}/{currentCount}",method = RequestMethod.GET)
     public String typelist(Model model,
                            @PathVariable("typeId") Integer typeId,
                            @PathVariable("currentPage") String currentPage,

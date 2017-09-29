@@ -10,10 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -40,7 +37,7 @@ public class BlogLabelController {
      * @param currentCount
      * @return
      */
-    @RequestMapping("getAllLabels")
+    @RequestMapping(value = "getAllLabels",method = RequestMethod.GET)
     @ResponseBody
     public List<BlogLabelVo> getAllLabels(@RequestParam(defaultValue = "1") String currentPage,
                                           @RequestParam(value = "rows",defaultValue = "10") String currentCount){
@@ -62,7 +59,7 @@ public class BlogLabelController {
      * @param labelName
      * @return
      */
-    @RequestMapping("articlesBylabel/{labelName}")
+    @RequestMapping(value = "articlesBylabel/{labelName}",method = RequestMethod.GET)
     public String getTypeListBylabel(Model model, @RequestParam(defaultValue = "1") String currentPage, @RequestParam(value = "rows",defaultValue = "9") String currentCount, @PathVariable("labelName") String labelName){
         try {
             logger.info("传递的标签名是:"+labelName);
@@ -88,7 +85,7 @@ public class BlogLabelController {
      * @param currentCount
      * @return
      */
-    @RequestMapping("alllabellist/{currentPage}/{currentCount}")
+    @RequestMapping(value = "alllabellist/{currentPage}/{currentCount}",method = RequestMethod.GET)
     public String labelList(Model model,
                             @PathVariable("currentPage") String currentPage,
                             @PathVariable("currentCount") String currentCount){
@@ -113,7 +110,7 @@ public class BlogLabelController {
      * @param labelName
      * @return
      */
-    @RequestMapping("labellist/{labelName}/{currentPage}/{currentCount}")
+    @RequestMapping(value = "labellist/{labelName}/{currentPage}/{currentCount}",method = RequestMethod.GET)
     public String typelist(Model model,
                            @PathVariable("labelName") String labelName,
                            @PathVariable("currentPage") String currentPage,
