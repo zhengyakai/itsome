@@ -62,12 +62,10 @@ public class BlogArticleServiceImpl implements BlogArticleService {
     @Override
     public BlogArticle getArticleById(Integer articleId) {
 
-        String detailKey=String.valueOf(articleId);
-
+        String detailKey="detail_"+String.valueOf(articleId);
         BlogArticle blogArticle = null;
-        String detailJson = null;
         try {
-            detailJson = this.redisUtils.get(detailKey);
+            String detailJson = this.redisUtils.get(detailKey);
             if(StringUtils.isNotBlank(detailJson)){
                 blogArticle = JSONObject.parseObject(detailJson, BlogArticle.class);
                 logger.info("从redis中获得的blogArticle详情"+detailJson);
