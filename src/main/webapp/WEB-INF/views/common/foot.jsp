@@ -9,6 +9,6 @@
 <%--<hr style="border: none;height: 2px" >--%>
 <div class="row" style="margin-top: 0px">
     <div class="well  text-center">
-        <a href="https://github.com/zhengyakai/itsome" target="_blank"><img src="http://yakai.oss-cn-beijing.aliyuncs.com/blog_img/foot.png"></a>
+        <a href="https://github.com/zhengyakai/itdog" target="_blank"><img src="http://yakai.oss-cn-beijing.aliyuncs.com/blog_img/foot.png"></a>
     </div>
 </div>

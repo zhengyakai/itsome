@@ -56,7 +56,7 @@
         <span>微信&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp<a href="javascript:;" class="noneLine">薛定谔的汪</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
         <hr>
         <span class="glyphicon glyphicon-fire" style="color: #2e6da4">
-                        <a href="https://github.com/zhengyakai/itsome" target="_blank">GitHub</a>
+                        <a href="https://github.com/zhengyakai/itdog" target="_blank">GitHub</a>
                     </span>
         <span class="glyphicon glyphicon-fire" style="color: #2e6da4">
                         <a href="javascript:;">微博</a>

@@ -26,7 +26,7 @@
 
             <c:forEach items="${pageBean.pageList}" var="article">
                 <div class="mytype col-lg-3 col-xs-12 animated fadeInDown">
-                    <a href="${path}/detail/${article.articleId}">
+                    <a href="${path}/article/detail/${article.articleId}">
                     <span class="myspan">
                             ${article.title}
                     </span>
