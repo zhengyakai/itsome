@@ -26,7 +26,9 @@
 <script>
     $(function () {
         $("#content-body img").each(function () {
-            $(this).css("width","100%");
+            $(this).css("width","50%");
+            //$(this).wrap("<div class='col-xs-6 col-lg-12'></div>")
+            //$(this).css("img-responsive");
         })
     })
 
