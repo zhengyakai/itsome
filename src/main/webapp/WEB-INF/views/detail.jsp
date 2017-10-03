@@ -16,7 +16,7 @@
             </h3>
         </div>
         <div class="panel-body" id="content-body">
-            <span>
+            <span id="article-content">
                 ${article.content}
             </span>
         </div>
@@ -30,10 +30,11 @@
 </div>
 <script>
     $(function () {
+        //var $p = $("#article-content").find("p");
+        //alert($p.length)
+        $("p").css("font-size","18px");
         $("#content-body img").each(function () {
             $(this).css("width","50%");
-            //$(this).wrap("<div class='col-xs-6 col-lg-12'></div>")
-            //$(this).css("img-responsive");
         })
     })
 
