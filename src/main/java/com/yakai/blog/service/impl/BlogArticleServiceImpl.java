@@ -64,19 +64,20 @@ public class BlogArticleServiceImpl implements BlogArticleService {
 
         String detailKey="detail_"+String.valueOf(articleId);
         BlogArticle blogArticle = null;
+        String detailJson = null;
         try {
-            String detailJson = this.redisUtils.get(detailKey);
+            detailJson = this.redisUtils.get(detailKey);
             if(StringUtils.isNotBlank(detailJson)){
                 blogArticle = JSONObject.parseObject(detailJson, BlogArticle.class);
                 logger.info("从redis中获得的blogArticle详情"+detailJson);
-            }else{
-                blogArticle = blogArticleMapper.selectByPrimaryKey(articleId);
-                detailJson = JSONObject.toJSONString(blogArticle);
-                this.redisUtils.set(detailKey,detailJson,300);
+                return blogArticle;
             }
         }catch (Exception e){
             logger.info("从redis中获得blogArticle详情异常!",e);
         }
+        blogArticle = blogArticleMapper.selectByPrimaryKey(articleId);
+        detailJson = JSONObject.toJSONString(blogArticle);
+        this.redisUtils.set(detailKey,detailJson,300);
         return blogArticle;
     }
 
