@@ -72,4 +72,19 @@ public class BlogArticle {
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
     }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        if(obj instanceof BlogArticle){
+            BlogArticle blogArticle = (BlogArticle) obj;
+            return (articleId.equals(blogArticle.articleId));
+        }
+        return super.equals(obj);
+    }
+
+    @Override
+    public int hashCode() {
+        return articleId.hashCode();
+    }
 }

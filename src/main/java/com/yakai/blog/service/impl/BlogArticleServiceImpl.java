@@ -17,7 +17,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class BlogArticleServiceImpl implements BlogArticleService {
@@ -93,8 +95,9 @@ public class BlogArticleServiceImpl implements BlogArticleService {
      */
     @Override
     public List<BlogArticle> getArticleBySearchWords(String searchWords) {
-
-        List<BlogArticle> articles = new ArrayList<>();
+        List<BlogArticle> articleList = new ArrayList<>();
+        //用set集合去重 BlogArticle重写equals和hashcode
+        Set<BlogArticle> articles = new HashSet<>();
         //根据title查询
         BlogArticleExample example = new BlogArticleExample();
         example.createCriteria().andTitleLike("%"+searchWords+"%");
@@ -105,11 +108,12 @@ public class BlogArticleServiceImpl implements BlogArticleService {
         example.createCriteria().andLabelLike("%"+searchWords+"%");
         List<BlogArticle> articles2 = blogArticleMapper.selectByExample(example);
         articles.addAll(articles2);
-
         /*//根据类别
         List<BlogArticle> articles3 = blogArticleMapper.selectLikeType(searchWords);
         articles.addAll(articles3);*/
-        return articles;
+        logger.info(JSONObject.toJSONString(articles));
+        articleList.addAll(articles);
+        return articleList;
     }
 
 }
