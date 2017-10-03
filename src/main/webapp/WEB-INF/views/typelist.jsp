@@ -40,7 +40,7 @@
                     <span class="myspan">
                             ${articlesVo.title}
                     </span>
-                        <h5><fmt:formatDate value="${articlesVo.createTime}" pattern="yyyy/MM/dd"/></h5>
+                        <%--<h5><fmt:formatDate value="${articlesVo.createTime}" pattern="yyyy/MM/dd"/></h5>--%>
                     </a>
                 </div>
             </c:forEach>

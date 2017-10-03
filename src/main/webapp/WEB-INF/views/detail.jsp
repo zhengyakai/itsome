@@ -10,10 +10,15 @@
     <div class="col-lg-1"></div>
     <div class="panel panel-info col-lg-8">
         <div class="panel-heading">
-            <h3 class="panel-title">${article.title}</h3>
+            <h3 class="panel-title">
+                ${article.title}&nbsp;&nbsp;&nbsp;&nbsp;
+                <fmt:formatDate value="${article.createTime}" pattern="yyyy/MM/dd"/>
+            </h3>
         </div>
         <div class="panel-body" id="content-body">
-            <span>${article.content}</span>
+            <span>
+                ${article.content}
+            </span>
         </div>
     </div>
     <div class="col-lg-3">
