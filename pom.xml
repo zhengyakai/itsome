@@ -28,8 +28,6 @@
     <pagehelper.version>3.7.5</pagehelper.version>
     <jsqlparser.version>0.9.1</jsqlparser.version>
     <jedis.version>2.7.2</jedis.version>
-    <solrj.version>4.10.3</solrj.version>
-    <freemarker.version>2.3.23</freemarker.version>
   </properties>
 
   <dependencies>
@@ -164,20 +162,6 @@
       <groupId>redis.clients</groupId>
       <artifactId>jedis</artifactId>
       <version>${jedis.version}</version>
-    </dependency>
-
-    <!-- solr客户端 -->
-    <dependency>
-      <groupId>org.apache.solr</groupId>
-      <artifactId>solr-solrj</artifactId>
-      <version>${solrj.version}</version>
-    </dependency>
-
-    <!-- freemarker -->
-    <dependency>
-      <groupId>org.freemarker</groupId>
-      <artifactId>freemarker</artifactId>
-      <version>${freemarker.version}</version>
     </dependency>
   </dependencies>
 

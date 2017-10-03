@@ -13,8 +13,7 @@
     <!-- 配置注解驱动 -->
     <mvc:annotation-driven />
 
-    <!-- Example: prefix="/WEB-INF/jsp/", suffix=".jsp", viewname="test" ->
-        "/WEB-INF/jsp/test.jsp" -->
+
     <!-- 配置视图解析器 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <!-- 配置前缀 -->

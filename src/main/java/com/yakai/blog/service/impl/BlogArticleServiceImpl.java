@@ -16,6 +16,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -92,9 +93,22 @@ public class BlogArticleServiceImpl implements BlogArticleService {
      */
     @Override
     public List<BlogArticle> getArticleBySearchWords(String searchWords) {
+
+        List<BlogArticle> articles = new ArrayList<>();
+        //根据title查询
         BlogArticleExample example = new BlogArticleExample();
         example.createCriteria().andTitleLike("%"+searchWords+"%");
-        List<BlogArticle> articles = blogArticleMapper.selectByExample(example);
+        List<BlogArticle> articles1 = blogArticleMapper.selectByExample(example);
+        articles.addAll(articles1);
+        //根据label查询
+        example.clear();
+        example.createCriteria().andLabelLike("%"+searchWords+"%");
+        List<BlogArticle> articles2 = blogArticleMapper.selectByExample(example);
+        articles.addAll(articles2);
+
+        /*//根据类别
+        List<BlogArticle> articles3 = blogArticleMapper.selectLikeType(searchWords);
+        articles.addAll(articles3);*/
         return articles;
     }
 

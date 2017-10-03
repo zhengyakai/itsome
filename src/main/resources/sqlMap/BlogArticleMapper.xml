@@ -235,4 +235,12 @@
   </select>
 
 
+  <!--<select id="selectLikeType" parameterType="String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from blog_article a,blog_type t
+    where a.type = t.type_id
+    and t.type_name like CONCAT('%',#{searchWords},'%')
+    ORDER BY create_time desc
+  </select>-->
 </mapper>

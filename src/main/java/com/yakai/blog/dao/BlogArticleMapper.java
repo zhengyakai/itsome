@@ -34,4 +34,6 @@ public interface BlogArticleMapper {
     List<BlogArchiveVo> getDateList();
 
     List<BlogArticle> getArticlesByDate(String dateStr);
+
+    //List<BlogArticle> selectLikeType(String searchWords);
 }
