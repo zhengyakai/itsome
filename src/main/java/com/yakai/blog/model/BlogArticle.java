@@ -75,7 +75,6 @@ public class BlogArticle {
 
     @Override
     public boolean equals(Object obj) {
-
         if(obj instanceof BlogArticle){
             BlogArticle blogArticle = (BlogArticle) obj;
             return (articleId.equals(blogArticle.articleId));
@@ -87,4 +86,5 @@ public class BlogArticle {
     public int hashCode() {
         return articleId.hashCode();
     }
+
 }
