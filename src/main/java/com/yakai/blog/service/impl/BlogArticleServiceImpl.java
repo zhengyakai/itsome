@@ -77,7 +77,11 @@ public class BlogArticleServiceImpl implements BlogArticleService {
         }
         blogArticle = blogArticleMapper.selectByPrimaryKey(articleId);
         detailJson = JSONObject.toJSONString(blogArticle);
-        this.redisUtils.set(detailKey,detailJson,300);
+        try {
+            this.redisUtils.set(detailKey,detailJson,300);
+        } catch (Exception e) {
+            logger.info("articleId"+articleId+"详情存入redis异常!",e);
+        }
         return blogArticle;
     }
 
