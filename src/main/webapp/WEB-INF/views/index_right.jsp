@@ -54,10 +54,9 @@
         <hr>
         <div class="container-fluid" style="text-align: left">
             <div class="col-lg-1"></div>
-            <div class="col-lg-11">
-                <span>邮箱:<a href="mailto:yakai512@163.com" class="noneLine">yakai512@163.com</a></span><br>
-                <span>微信:<a href="javascript:;" class="noneLine">薛定谔的汪</a></span>
-            </div>
+            邮箱:<a href="mailto:yakai512@163.com" class="noneLine">yakai512@163.com</a><br/>
+            <div class="col-lg-1"></div>
+            微信:<a href="javascript:;" class="noneLine">薛定谔的汪</a>
         </div>
         <hr>
         <span class="glyphicon glyphicon-fire" style="color: #2e6da4">
