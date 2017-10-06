@@ -43,7 +43,7 @@
     </script>
 </head>
 <body>
-<div class="panel  panel-default animated fadeInRight" style="height: 600px">
+<div class="panel  panel-default animated fadeInRight" style="height: auto">
     <div style="margin: 50px;text-align: center">
         <img src="http://yakai.oss-cn-beijing.aliyuncs.com/blog_img/James.jpg" style="height:250px;">
         <h2><span style="font-weight: 600">詹姆斯</span></h2>
@@ -52,8 +52,13 @@
             <p>微信公众号[薛定汪的鳄]<p>
         </h4>
         <hr>
-        <span>邮件&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;<a href="mailto:yakai512@163.com" class="noneLine">yakai512@163.com</a></span><br>
-        <span>微信&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp<a href="javascript:;" class="noneLine">薛定谔的汪</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <div class="container-fluid" style="text-align: left">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-11">
+                <span>邮箱:<a href="mailto:yakai512@163.com" class="noneLine">yakai512@163.com</a></span><br>
+                <span>微信:<a href="javascript:;" class="noneLine">薛定谔的汪</a></span>
+            </div>
+        </div>
         <hr>
         <span class="glyphicon glyphicon-fire" style="color: #2e6da4">
                         <a href="https://github.com/zhengyakai/itdog" target="_blank">GitHub</a>
@@ -87,7 +92,7 @@
     <div id="labelId" style="text-align: left;margin: 30px 30px auto 30px">
         <p style="font-weight: 600;font-size: 25px;color: #2e6da4;margin-bottom: auto">标签</p>
         <hr style="border: solid;height: 1px;color:#CCCCCC;background-color: #CCCCCC;margin: auto auto 7px auto"/>
-       <%-- <a href="#" class="myA">Bootstrap</a><sup class="mysup">10</sup><br>--%>
+        <%-- <a href="#" class="myA">Bootstrap</a><sup class="mysup">10</sup><br>--%>
     </div>
 
     <div id="type" style="text-align: left;margin: 30px 30px auto 30px">
