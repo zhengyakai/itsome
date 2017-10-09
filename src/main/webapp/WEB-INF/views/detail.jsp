@@ -36,7 +36,6 @@
         $("li").css("font-size","18px");
         $("pre").css("font-size","18px");
         $("#content-body span").css("font-size","18px");
-        //$("span:not(.glyphicon-upload)").css("font-size","18px");
         $("#content-body img").each(function () {
             $(this).css("width","50%");
         })
