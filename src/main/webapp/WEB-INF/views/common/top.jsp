@@ -45,7 +45,7 @@
 </div>--%>
 <span class="rb">
     <a href="javascript:window.scrollTo( 0, 0 );">
-    <span class="glyphicon glyphicon-upload"></span>
+    <span  class="glyphicon glyphicon-upload"></span>
     </a>
 </span>
 
