@@ -22,7 +22,7 @@
 <div class="container-fluid">
     <div class="container-fluid">
         <div class="col-lg-1 col-xs-12"></div>
-        <div class="col-lg-8 col-xs-12 aiticleCls">
+        <div class="col-lg-9 col-xs-12 aiticleCls">
 
             <c:forEach items="${pageBean.pageList}" var="article">
                 <div class="mytype col-lg-3 col-xs-12 animated fadeInDown">
@@ -62,7 +62,6 @@
 
             </div>
         </div>
-        <div class="col-lg-1"></div>
     </div>
 
     <div class="container-fluid">
