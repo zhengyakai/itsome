@@ -60,7 +60,6 @@
         $("#content-body img").each(function () {
             $(this).css("width","50%");
         });
-        //$("#content-body pre").attr("class","preClass");
     })
 
 </script>
