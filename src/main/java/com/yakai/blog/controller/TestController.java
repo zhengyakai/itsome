@@ -29,4 +29,8 @@ public class TestController {
     public String testTop(){
         return "common/top";
     }
+    @RequestMapping("test1")
+    public String test1(){
+        return "test1";
+    }
 }

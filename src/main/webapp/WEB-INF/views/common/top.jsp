@@ -20,6 +20,7 @@
     <script type="text/javascript" src="${path}/static/js/jquery-3.1.1.js"></script>
     <script type="text/javascript" src="${path}/static/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="${path}/static/js/my.js"></script>
+    <script type="text/javascript" src="${path}/static/js/jquery.highlight-5.js"></script>
     <style>
         #x:hover{
             text-decoration: none;
@@ -33,6 +34,7 @@
             font-size: 50px;
             font-weight: 600;
         }
+        .highlight {color: red; }
     </style>
 </head>
 
@@ -42,36 +44,36 @@
     <a style="font-size:50px;font-weight: 600;color:#CCCCCC;margin-bottom: 0px" href="javascript:window.scrollTo( 0, 0 );">
         <span class="glyphicon glyphicon-upload"></span>
     </a>
-</div>--%>
-<span class="rb">
+            </div>--%>
+            <span class="rb">
     <a href="javascript:window.scrollTo( 0, 0 );">
     <span  class="glyphicon glyphicon-upload"></span>
     </a>
 </span>
 
-<div class="container-fluid">
-    <nav id="navId" class="navbar navbar-default navbar-fixed-top animated">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-10">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a class="navbar-brand" href="${path }/index">Home</a>
-                    </li>
-                    <li>
-                        <a  class="navbar-brand" href="${path }/archives/all">Archives</a>
-                    </li>
-                    <li>
-                        <a  class="navbar-brand" href="${path }/toPage/about">About</a>
-                    </li>
+            <div class="container-fluid">
+                <nav id="navId" class="navbar navbar-default navbar-fixed-top animated">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <a class="navbar-brand" href="${path }/index">Home</a>
+                                </li>
+                                <li>
+                                    <a  class="navbar-brand" href="${path }/archives/all">Archives</a>
+                                </li>
+                                <li>
+                                    <a  class="navbar-brand" href="${path }/toPage/about">About</a>
+                                </li>
                     <li>
                         <a  class="navbar-brand" href="${path }/toPage/link">Link</a>
                     </li>
@@ -163,9 +165,10 @@
                 dataType : "json",
                 success : function(data) {
                     for(var i=0;i<data.length;i++){
-                        child = '<h2 style="margin: 5px 0px"><a href="${path}/article/detail/'+data[i].articleId+'">'+data[i].title+'</a></h2>\n' +'<span class="summary">'+data[i].label+'</span>\n' +'<hr style="margin: 5px auto">';
+                        child = '<h2 class="hl" style="margin: 5px 0px"><a href="${path}/article/detail/'+data[i].articleId+'">'+data[i].title+'</a></h2>\n' +'<span class="summary hl">'+data[i].label+'</span>\n' +'<hr style="margin: 5px auto">';
                         $("#search-result").append(child);
                     }
+                    $(".hl").highlight(keyword);
                 }
             })
         }
