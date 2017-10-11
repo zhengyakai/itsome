@@ -20,7 +20,7 @@
     <script type="text/javascript" src="${path}/static/js/jquery-3.1.1.js"></script>
     <script type="text/javascript" src="${path}/static/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="${path}/static/js/my.js"></script>
-    <script type="text/javascript" src="${path}/static/js/jquery.highlight-5.js"></script>
+    <script type="text/javascript" src="${path}/static/js/highlight.js"></script>
     <style>
         #x:hover{
             text-decoration: none;
@@ -45,35 +45,35 @@
         <span class="glyphicon glyphicon-upload"></span>
     </a>
             </div>--%>
-            <span class="rb">
+<span class="rb">
     <a href="javascript:window.scrollTo( 0, 0 );">
     <span  class="glyphicon glyphicon-upload"></span>
     </a>
 </span>
 
-            <div class="container-fluid">
-                <nav id="navId" class="navbar navbar-default navbar-fixed-top animated">
-                    <div class="col-lg-1"></div>
-                    <div class="col-lg-10">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        </div>
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul class="nav navbar-nav">
-                                <li>
-                                    <a class="navbar-brand" href="${path }/index">Home</a>
-                                </li>
-                                <li>
-                                    <a  class="navbar-brand" href="${path }/archives/all">Archives</a>
-                                </li>
-                                <li>
-                                    <a  class="navbar-brand" href="${path }/toPage/about">About</a>
-                                </li>
+<div class="container-fluid">
+    <nav id="navId" class="navbar navbar-default navbar-fixed-top animated">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a class="navbar-brand" href="${path }/index">Home</a>
+                    </li>
+                    <li>
+                        <a  class="navbar-brand" href="${path }/archives/all">Archives</a>
+                    </li>
+                    <li>
+                        <a  class="navbar-brand" href="${path }/toPage/about">About</a>
+                    </li>
                     <li>
                         <a  class="navbar-brand" href="${path }/toPage/link">Link</a>
                     </li>
@@ -111,15 +111,25 @@
 <div class="modal" id="searchModal">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-body" style="height: 560px;padding: 15px;overflow: auto" >
+            <div class="modal-body" style="height: 560px;padding: 15px;overflow: auto;position: relative;" >
                 <div class="input-group">
                     <input name="searchWords" id="searchInput" class="form-control" placeholder="搜索..."/>
                     <span class="input-group-addon" data-dismiss="modal">
                             <a href="javascript:;" style="color: black;" id="x">x</a>
-                        </span>
+                    </span>
                 </div>
 
                 <div class="animated fadeIn" id="search-result">
+
+                </div>
+                <!-- 搜索字体图标 -->
+                <div  id="searchImg" style="width: 100px;height: 100px;margin: auto;position: absolute;top: 0;left: 0;bottom: 0;right: 0;text-align: center">
+                    <span style="font-weight: 600;font-size: 100px;color: #CCCCCC" class="glyphicon glyphicon-search"></span>
+                </div>
+
+                <!-- 未找到字体图标 -->
+                <div  id="notFoundImg" style="width: 100px;height: 100px;margin: auto;position: absolute;top: 0;left: 0;bottom: 0;right: 0;text-align: center">
+                    <span style="font-weight: 600;font-size: 100px;color: #CCCCCC" class="glyphicon glyphicon-eye-close"></span>
                 </div>
             </div>
         </div>
@@ -144,33 +154,41 @@
             $("#searchModal").modal("toggle");
             $(".modal-backdrop").remove();//删除class值为modal-backdrop的标签，可去除阴影
             $("#searchInput").val("");
-            $("#search-result").children().remove();
+            $("#search-result").html("");
+            $("#notFoundImg").hide();
+            $("#searchImg").show();
         });
-
         $("#searchInput").keyup(searchAjax);
-        /*$("#searchInput").keyup(function () {
-            alert($(this).val())
-        })*/
     });
 
     function searchAjax(){
+        //清空原先的显示内容
         $("#search-result").children().remove();
         //获得关键字
         var keyword = $(this).val();
-        //如果输入的内容是空(例如用户连续敲空格),不发送ajax
+        //如果输入的内容不是空(例如用户连续敲空格),则发送ajax
         if (keyword !== null && keyword !== undefined && keyword.trim()!== ''){
+            $("#searchImg").hide();
             $.ajax({
                 url : '${path}/article/search/'+keyword,
                 type : "post",
                 dataType : "json",
                 success : function(data) {
+                    if(data.length==0){
+                        $("#notFoundImg").show();
+                        return;
+                    }
+                    $("#notFoundImg").hide();
                     for(var i=0;i<data.length;i++){
-                        child = '<h2 class="hl" style="margin: 5px 0px"><a href="${path}/article/detail/'+data[i].articleId+'">'+data[i].title+'</a></h2>\n' +'<span class="summary hl">'+data[i].label+'</span>\n' +'<hr style="margin: 5px auto">';
+                        var child = '<h2 class="hl" style="margin: 5px 0px"><a href="${path}/article/detail/'+data[i].articleId+'">'+data[i].title+'</a></h2>\n' +'<span class="summary hl">'+data[i].label+'</span>\n' +'<hr style="margin: 5px auto">';
                         $("#search-result").append(child);
                     }
                     $(".hl").highlight(keyword);
                 }
             })
+        }else{
+            var child = '<span class="glyphicon glyphicon-search"></span>';
+            $("#searchImg").show();
         }
     }
 </script>
