@@ -172,6 +172,17 @@
             $("#searchImg").show();
         });
         $("#searchInput").keyup(searchAjax);
+        /*以下代码是给pre标签每行加上行号*/
+        /*var arr = $("pre").html().split("\n");
+        var text = "<ul>";
+        $.each(arr,function(i,item){
+            if(item.trim()!=""){
+                text += "<li>"+ item +"</li>";
+            }
+            text += "</ul>"
+            $("pre").html(text);
+        });*/
+        /*以上代码是给pre标签每行加上行号*/
     });
 
     function searchAjax(){

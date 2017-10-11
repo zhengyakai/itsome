@@ -11,7 +11,20 @@
     <context:component-scan base-package="com.yakai.blog.controller" />
 
     <!-- 配置注解驱动 -->
-    <mvc:annotation-driven />
+    <mvc:annotation-driven>
+        <!-- ResponseBody解决返回字符串汉字乱码 -->
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>text/plain;charset=utf-8</value>
+                        <value>text/html;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
 
 
     <!-- 配置视图解析器 -->
