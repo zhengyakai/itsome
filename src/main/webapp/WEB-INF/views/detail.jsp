@@ -59,7 +59,6 @@
             $(this).css("width","50%");
         });
     })
-
 </script>
 </body>
 </html>
