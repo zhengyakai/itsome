@@ -21,7 +21,7 @@
             border-style:dotted dotted dotted solid;/*边框样式*/
             border-width:1px 1px 1px 5px;/*边框宽度*/
             border-color:#5bbcdd;/*边框颜色*/
-            line-height:100% /*行间距*/
+            line-height:200% /*行间距*/
         }
     </style>
 </head>
