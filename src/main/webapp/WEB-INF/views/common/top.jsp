@@ -35,6 +35,19 @@
             font-weight: 600;
         }
         .highlight {color: red; }
+        .fontImg{
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            position: absolute;
+            top: 0;left: 0;bottom: 0;right: 0;
+            text-align: center
+        }
+        .fontImgSpan{
+            font-weight: 600;
+            font-size: 100px;
+            color: #CCCCCC
+        }
     </style>
 </head>
 
@@ -123,13 +136,13 @@
 
                 </div>
                 <!-- 搜索字体图标 -->
-                <div  id="searchImg" style="width: 100px;height: 100px;margin: auto;position: absolute;top: 0;left: 0;bottom: 0;right: 0;text-align: center">
-                    <span style="font-weight: 600;font-size: 100px;color: #CCCCCC" class="glyphicon glyphicon-search"></span>
+                <div class="fontImg"  id="searchImg">
+                    <span class="fontImgSpan glyphicon glyphicon-search"></span>
                 </div>
 
                 <!-- 未找到字体图标 -->
-                <div  id="notFoundImg" style="width: 100px;height: 100px;margin: auto;position: absolute;top: 0;left: 0;bottom: 0;right: 0;text-align: center">
-                    <span style="font-weight: 600;font-size: 100px;color: #CCCCCC" class="glyphicon glyphicon-eye-close"></span>
+                <div class="fontImg"  id="notFoundImg">
+                    <span class="fontImgSpan glyphicon glyphicon-eye-close"></span>
                 </div>
             </div>
         </div>

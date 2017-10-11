@@ -3,6 +3,27 @@
 <html>
 <head>
     <title>${article.title}</title>
+    <style>
+        pre {
+            box-sizing: border-box;
+            /*以下样式是自动换行代码*/
+            white-space: pre-wrap; /* css-3 */
+            white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+            white-space: -pre-wrap; /* Opera 4-6 */
+            white-space: -o-pre-wrap; /* Opera 7 */
+            word-wrap: break-word; /* Internet Explorer 5.5+ */
+            /*以上样式是自动换行代码，需要的加上，不需要的删除*/
+
+            background: #d9edf7;  /*背景颜色*/
+            padding: 0.75em 0.75em; /*内部文字距离边框的距离*/
+            margin: 1em 3em 1em 0em; /*边框上右下左的缩进*/
+            font-size:.8em; /*字体大小*/
+            border-style:dotted dotted dotted solid;/*边框样式*/
+            border-width:1px 1px 1px 5px;/*边框宽度*/
+            border-color:#5bbcdd;/*边框颜色*/
+            line-height:100% /*行间距*/
+        }
+    </style>
 </head>
 <body>
 
@@ -38,7 +59,8 @@
         $("#content-body span").css("font-size","18px");
         $("#content-body img").each(function () {
             $(this).css("width","50%");
-        })
+        });
+        //$("#content-body pre").attr("class","preClass");
     })
 
 </script>
