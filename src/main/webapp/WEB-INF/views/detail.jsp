@@ -51,8 +51,6 @@
 </div>
 <script>
     $(function () {
-        //var $p = $("#article-content").find("p");
-        //alert($p.length)
         $("p").css("font-size","18px");
         $("li").css("font-size","18px");
         $("pre").css("font-size","18px");
