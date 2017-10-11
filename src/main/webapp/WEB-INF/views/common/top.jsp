@@ -189,6 +189,7 @@
         }else{
             var child = '<span class="glyphicon glyphicon-search"></span>';
             $("#searchImg").show();
+            $("#notFoundImg").hide();
         }
     }
 </script>
