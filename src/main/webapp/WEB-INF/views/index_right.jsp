@@ -91,13 +91,11 @@
     <div id="labelId" style="text-align: left;margin: 30px 30px auto 30px">
         <p style="font-weight: 600;font-size: 25px;color: #2e6da4;margin-bottom: auto">标签</p>
         <hr style="border: solid;height: 1px;color:#CCCCCC;background-color: #CCCCCC;margin: auto auto 7px auto"/>
-        <%-- <a href="#" class="myA">Bootstrap</a><sup class="mysup">10</sup><br>--%>
     </div>
 
     <div id="type" style="text-align: left;margin: 30px 30px auto 30px">
         <p style="font-weight: 600;font-size: 25px;color: #2e6da4;margin-bottom: auto">分类</p>
         <hr style="border: solid;height: 1px;color:#CCCCCC;background-color: #CCCCCC;margin: auto auto 7px auto"/>
-        <%--<a style="font-weight: 500;font-size: 20px">JAVA技术</a><sup class="mysup">17</sup><hr class="myhr1"/>--%>
     </div>
     <!-- 推荐网站 -->
     <div style="text-align: left;margin: 30px 30px auto 30px">
@@ -108,6 +106,5 @@
         <a class="myA" href="http://www.csdn.net/" target="_blank">CSDN</a><hr class="myhr1"/>
     </div>
 </div>
-
 </body>
 </html>
