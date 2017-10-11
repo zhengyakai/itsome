@@ -1,5 +1,3 @@
-
-
 jQuery.fn.highlight = function(pat) {
  function innerHighlight(node, pat) {
   var skip = 0;
@@ -38,4 +36,5 @@ jQuery.fn.removeHighlight = function() {
   }
  }).end();
 };
+
 
