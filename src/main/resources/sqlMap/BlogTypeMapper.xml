@@ -106,8 +106,7 @@
 	t.type_name typeName,
 	count(a.article_id) typeCount
     FROM
-	  blog_type t
-    LEFT JOIN blog_article a ON a.type = t.type_id
+	  blog_type t,blog_article a where a.type = t.type_id
     GROUP BY
 	  t.type_id
   </select>
