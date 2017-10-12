@@ -16,7 +16,7 @@
 
             background: #d9edf7;  /*背景颜色*/
             padding: 0.75em 0.75em; /*内部文字距离边框的距离*/
-            margin: 1em 3em 1em 0em; /*边框上右下左的缩进*/
+            margin: 1em 0em; /*边框上右下左的缩进*/
             font-size:.8em; /*字体大小*/
             border-style:dotted dotted dotted solid;/*边框样式*/
             border-width:1px 1px 1px 5px;/*边框宽度*/
