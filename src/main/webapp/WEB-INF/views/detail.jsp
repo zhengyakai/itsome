@@ -39,6 +39,7 @@
         <div class="panel-body" id="content-body">
             <span id="article-content">
                 ${article.content}
+                
             </span>
         </div>
     </div>

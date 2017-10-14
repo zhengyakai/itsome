@@ -21,6 +21,7 @@
     <script type="text/javascript" src="${path}/static/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="${path}/static/js/my.js"></script>
     <script type="text/javascript" src="${path}/static/js/highlight.js"></script>
+    <script type="text/javascript" src="${path}/static/js/love.js"></script>
     <style>
         #x:hover{
             text-decoration: none;
